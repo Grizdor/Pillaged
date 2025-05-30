@@ -1,25 +1,19 @@
 
-Installation information
+Pillage'd
 =======
+Pillage'd is a mod for Minecraft, revolving around illagers, expanding on them with new features while updating or 
+overhauling old features, including structures & vanilla-based illagers. The goal is to make the Pillagers feel more 
+interesting & filled out, with a greater challenge that provides a more enjoyable experience, as well as a bit of 
+proper lore. A features list will be provided somewhere below & updated regularly as new content is added. If you notice 
+compatibility issues with other mods that affect illagers or their structures, let us know & it'll be looked into.
 
-This template repository can be directly cloned to get you started with a new
-mod. Simply create a new repository cloned from this one, by following the
-instructions provided by [GitHub](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template).
-
-Once you have your clone, simply open the repository in the IDE of your choice. The usual recommendation for an IDE is either IntelliJ IDEA or Eclipse.
-
-If at any point you are missing libraries in your IDE, or you've run into problems you can
-run `gradlew --refresh-dependencies` to refresh the local cache. `gradlew clean` to reset everything 
-{this does not affect your code} and then start the process again.
-
-Mapping Names:
+Features:
 ============
-By default, the MDK is configured to use the official mapping names from Mojang for methods and fields 
-in the Minecraft codebase. These names are covered by a specific license. All modders should be aware of this
-license. For the latest license text, refer to the mapping file itself, or the reference copy here:
-https://github.com/NeoForged/NeoForm/blob/main/Mojang.md
+Currently, this is just in Datapack form (download links below).
+* Replaces the vanilla Pillager Outpost with a brand-new iteration, 
+including new structure elements, overhauled loot tables and even a new mini-boss.
 
-Additional Resources: 
+Downloads (datapack version): 
 ==========
-Community Documentation: https://docs.neoforged.net/  
-NeoForged Discord: https://discord.neoforged.net/
+Modrinth: https://modrinth.com/datapack/better-pillager-outpost-datapack  
+Curseforge: https://www.curseforge.com/minecraft/data-packs/better-pillager-outpost
