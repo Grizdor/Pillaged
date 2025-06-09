@@ -1,4 +1,9 @@
 {
   "itemGroup.pillaged": "Pillage'd",
+  "item.pillaged.emerald_sword": "Emerald Sword",
+  "item.pillaged.emerald_shovel": "Emerald Shovel",
+  "item.pillaged.emerald_pickaxe": "Emerald Pickaxe",
+  "item.pillaged.emerald_axe": "Emerald Axe",
+  "item.pillaged.emerald_hoe": "Emerald Hoe",
   "block.pillaged.pillager_deepslate": "Pillager Deepslate"
 }

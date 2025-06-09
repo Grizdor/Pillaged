@@ -23,6 +23,11 @@ public class ModCreativeModeTabs {
                     .withTabsBefore(CreativeModeTabs.COMBAT)
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModBlocks.PILLAGER_DEEPSLATE);
+                        output.accept(ModItems.EMERALD_SWORD);
+                        output.accept(ModItems.EMERALD_SHOVEL);
+                        output.accept(ModItems.EMERALD_PICKAXE);
+                        output.accept(ModItems.EMERALD_AXE);
+                        output.accept(ModItems.EMERALD_HOE);
                     }).build());
 
     public static void register(IEventBus eventBus) {
