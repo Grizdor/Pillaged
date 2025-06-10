@@ -3,6 +3,7 @@ package net.grizdor.pillaged;
 import net.grizdor.pillaged.block.ModBlocks;
 import net.grizdor.pillaged.item.ModCreativeModeTabs;
 import net.grizdor.pillaged.item.ModItems;
+import net.grizdor.pillaged.potion.ModPotions;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -39,6 +40,8 @@ public class Pillaged {
         ModCreativeModeTabs.register(modEventBus);
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+
+        ModPotions.register(modEventBus);
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);

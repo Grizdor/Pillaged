@@ -1,10 +1,16 @@
 {
   "itemGroup.pillaged": "Pillage'd",
+
   "item.pillaged.emerald_sword": "Emerald Sword",
   "item.pillaged.emerald_shovel": "Emerald Shovel",
   "item.pillaged.emerald_pickaxe": "Emerald Pickaxe",
   "item.pillaged.emerald_axe": "Emerald Axe",
   "item.pillaged.emerald_hoe": "Emerald Hoe",
   "item.pillaged.dark_emerald": "Dark Emerald",
+
+  "item.minecraft.potion.effect.resistance_potion": "Potion of Resistance",
+  "item.minecraft.splash_potion.effect.resistance_potion": "Splash Potion of Resistance",
+  "item.minecraft.lingering_potion.effect.resistance_potion": "Lingering Potion of Resistance",
+
   "block.pillaged.pillager_deepslate": "Pillager Deepslate"
 }
