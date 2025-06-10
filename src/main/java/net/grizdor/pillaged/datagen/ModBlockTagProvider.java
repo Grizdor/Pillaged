@@ -21,7 +21,8 @@ public class ModBlockTagProvider extends BlockTagsProvider {
     @Override
     protected void addTags(HolderLookup.Provider provider) {
         tag(BlockTags.MINEABLE_WITH_PICKAXE)
-                .add(ModBlocks.PILLAGER_DEEPSLATE.get());
+                .add(ModBlocks.PILLAGER_DEEPSLATE.get())
+                .add(ModBlocks.DEEPSLATE_DARK_EMERALD_ORE.get());
 
         tag(ModTags.Blocks.NEEDS_EMERALD_TOOL)
                 .addTag(BlockTags.NEEDS_IRON_TOOL);

@@ -12,5 +12,6 @@
   "item.minecraft.splash_potion.effect.resistance_potion": "Splash Potion of Resistance",
   "item.minecraft.lingering_potion.effect.resistance_potion": "Lingering Potion of Resistance",
 
-  "block.pillaged.pillager_deepslate": "Pillager Deepslate"
+  "block.pillaged.pillager_deepslate": "Pillager Deepslate",
+  "block.pillaged.deepslate_dark_emerald_ore": "Deepslate Dark Emerald Ore"
 }

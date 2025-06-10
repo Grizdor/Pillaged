@@ -5,6 +5,7 @@ import net.grizdor.pillaged.item.ModItems;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
@@ -26,6 +27,9 @@ public class ModBlocks {
                     .requiresCorrectToolForDrops()
                     .strength(3.5F, 6.0F)
                     .sound(SoundType.DEEPSLATE_BRICKS)));
+
+    public static final DeferredBlock<Block> DEEPSLATE_DARK_EMERALD_ORE = registerBlock("deepslate_dark_emerald_ore",
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE_EMERALD_ORE)));
 
     public static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);

@@ -1,6 +1,7 @@
 package net.grizdor.pillaged.datagen;
 
 import net.grizdor.pillaged.block.ModBlocks;
+import net.grizdor.pillaged.item.ModItems;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.loot.BlockLootSubProvider;
@@ -17,6 +18,9 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
     @Override
     protected void generate() {
         dropSelf(ModBlocks.PILLAGER_DEEPSLATE.get());
+
+        add(ModBlocks.DEEPSLATE_DARK_EMERALD_ORE.get(),
+                block -> createOreDrop(ModBlocks.DEEPSLATE_DARK_EMERALD_ORE.get(), ModItems.DARK_EMERALD.get()));
     }
 
     @Override
