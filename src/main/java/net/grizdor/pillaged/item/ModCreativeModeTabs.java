@@ -33,6 +33,11 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.EMERALD_AXE);
                         output.accept(ModItems.EMERALD_HOE);
                         output.accept(ModItems.DARK_EMERALD);
+                        output.accept(ModItems.DARK_EMERALD_SWORD);
+                        output.accept(ModItems.DARK_EMERALD_SHOVEL);
+                        output.accept(ModItems.DARK_EMERALD_PICKAXE);
+                        output.accept(ModItems.DARK_EMERALD_AXE);
+                        output.accept(ModItems.DARK_EMERALD_HOE);
                     }).build());
 
     public static void register(IEventBus eventBus) {

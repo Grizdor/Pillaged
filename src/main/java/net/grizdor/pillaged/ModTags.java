@@ -12,6 +12,9 @@ public class ModTags {
         public static final TagKey<Block> NEEDS_EMERALD_TOOL = createTag("needs_emerald_tool");
         public static final TagKey<Block> INCORRECT_FOR_EMERALD_TOOL = createTag("incorrect_for_emerald_tool");
 
+        public static final TagKey<Block> NEEDS_DARK_EMERALD_TOOL = createTag("needs_dark_emerald_tool");
+        public static final TagKey<Block> INCORRECT_FOR_DARK_EMERALD_TOOL = createTag("incorrect_for_dark_emerald_tool");
+
         private static TagKey<Block> createTag(String name) {
             return BlockTags.create(ResourceLocation.fromNamespaceAndPath(Pillaged.MOD_ID, name));
         }

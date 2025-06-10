@@ -25,7 +25,7 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.DARK_EMERALD_ORE.get())
                 .add(ModBlocks.DEEPSLATE_DARK_EMERALD_ORE.get());
 
-        tag(BlockTags.NEEDS_IRON_TOOL)
+        tag(BlockTags.NEEDS_DIAMOND_TOOL)
                 .add(ModBlocks.DARK_EMERALD_ORE.get())
                 .add(ModBlocks.DEEPSLATE_DARK_EMERALD_ORE.get());
 
@@ -35,5 +35,12 @@ public class ModBlockTagProvider extends BlockTagsProvider {
         tag(ModTags.Blocks.INCORRECT_FOR_EMERALD_TOOL)
                 .addTag(BlockTags.INCORRECT_FOR_IRON_TOOL)
                 .remove(ModTags.Blocks.NEEDS_EMERALD_TOOL);
+
+        //DARK EMERALD TOOL
+        tag(ModTags.Blocks.NEEDS_DARK_EMERALD_TOOL)
+                .addTag(BlockTags.NEEDS_DIAMOND_TOOL);
+        tag(ModTags.Blocks.INCORRECT_FOR_DARK_EMERALD_TOOL)
+                .addTag(BlockTags.INCORRECT_FOR_DIAMOND_TOOL)
+                .remove(ModTags.Blocks.NEEDS_DARK_EMERALD_TOOL);
     }
 }

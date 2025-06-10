@@ -21,5 +21,10 @@ public class ModItemModelProvider extends ItemModelProvider {
         handheldItem(ModItems.EMERALD_AXE.get());
         handheldItem(ModItems.EMERALD_HOE.get());
         basicItem(ModItems.DARK_EMERALD.get());
+        handheldItem(ModItems.DARK_EMERALD_SWORD.get());
+        handheldItem(ModItems.DARK_EMERALD_SHOVEL.get());
+        handheldItem(ModItems.DARK_EMERALD_PICKAXE.get());
+        handheldItem(ModItems.DARK_EMERALD_AXE.get());
+        handheldItem(ModItems.DARK_EMERALD_HOE.get());
     }
 }
