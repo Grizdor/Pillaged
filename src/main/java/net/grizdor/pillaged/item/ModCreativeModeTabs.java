@@ -28,6 +28,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.EMERALD_PICKAXE);
                         output.accept(ModItems.EMERALD_AXE);
                         output.accept(ModItems.EMERALD_HOE);
+                        output.accept(ModItems.DARK_EMERALD);
                     }).build());
 
     public static void register(IEventBus eventBus) {

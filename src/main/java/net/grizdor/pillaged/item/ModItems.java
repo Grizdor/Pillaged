@@ -30,6 +30,9 @@ public class ModItems {
             () -> new HoeItem(ModToolTiers.EMERALD, new Item.Properties()
                     .attributes(HoeItem.createAttributes(ModToolTiers.EMERALD, -3.0F, 0.0F))));
 
+    public static final DeferredItem<Item> DARK_EMERALD = ITEMS.register("dark_emerald",
+            () -> new Item(new Item.Properties()));
+
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }

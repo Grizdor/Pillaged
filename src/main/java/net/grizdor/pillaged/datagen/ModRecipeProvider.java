@@ -60,6 +60,15 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_emerald", has(Items.EMERALD))
                 .save(recipeOutput);
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, Items.REINFORCED_DEEPSLATE)
+                .pattern("BDB")
+                .pattern("DBD")
+                .pattern("BDB")
+                .define('B', Items.BONE).define('D',Items.DEEPSLATE)
+                .unlockedBy("has_deepslate", has(Items.DEEPSLATE))
+                .unlockedBy("has_bone",has(Items.BONE))
+                .save(recipeOutput);
+
         // STONECUTTER RECIPES
         SingleItemRecipeBuilder.stonecutting(Ingredient.of(Items.COBBLED_DEEPSLATE), RecipeCategory.BUILDING_BLOCKS, ModBlocks.PILLAGER_DEEPSLATE.get(), 1)
                 .unlockedBy("has_cobbled_deepslate", has(Blocks.COBBLED_DEEPSLATE.asItem()))

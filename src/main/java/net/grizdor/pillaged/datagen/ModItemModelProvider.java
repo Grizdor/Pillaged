@@ -3,6 +3,7 @@ package net.grizdor.pillaged.datagen;
 import net.grizdor.pillaged.Pillaged;
 import net.grizdor.pillaged.item.ModItems;
 import net.minecraft.data.PackOutput;
+import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.client.model.generators.ItemModelProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 
@@ -19,5 +20,6 @@ public class ModItemModelProvider extends ItemModelProvider {
         handheldItem(ModItems.EMERALD_PICKAXE.get());
         handheldItem(ModItems.EMERALD_AXE.get());
         handheldItem(ModItems.EMERALD_HOE.get());
+        basicItem(ModItems.DARK_EMERALD.get());
     }
 }
