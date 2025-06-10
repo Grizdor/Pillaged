@@ -17,6 +17,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
     protected void registerStatesAndModels() {
         blockWithItem(ModBlocks.PILLAGER_DEEPSLATE);
         blockWithItem(ModBlocks.DEEPSLATE_DARK_EMERALD_ORE);
+        blockWithItem(ModBlocks.DARK_EMERALD_ORE);
     }
 
     private void blockWithItem(DeferredBlock<?> deferredBlock) {

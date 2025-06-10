@@ -31,6 +31,9 @@ public class ModBlocks {
     public static final DeferredBlock<Block> DEEPSLATE_DARK_EMERALD_ORE = registerBlock("deepslate_dark_emerald_ore",
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE_EMERALD_ORE)));
 
+    public static final DeferredBlock<Block> DARK_EMERALD_ORE = registerBlock("dark_emerald_ore",
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.EMERALD_ORE)));
+
     public static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);
         registerBlockItem(name, toReturn);
