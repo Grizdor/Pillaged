@@ -33,6 +33,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.EMERALD_AXE);
                         output.accept(ModItems.EMERALD_HOE);
                         output.accept(ModItems.DARK_EMERALD);
+                        output.accept(ModItems.ILLAGER_CAPTAIN_SPAWN_EGG);
                     }).build());
 
     public static void register(IEventBus eventBus) {

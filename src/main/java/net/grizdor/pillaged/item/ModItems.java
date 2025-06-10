@@ -1,8 +1,10 @@
 package net.grizdor.pillaged.item;
 
 import net.grizdor.pillaged.Pillaged;
+import net.grizdor.pillaged.entity.ModEntities;
 import net.minecraft.world.item.*;
 import net.neoforged.bus.api.IEventBus;
+import net.neoforged.neoforge.common.DeferredSpawnEggItem;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
@@ -32,6 +34,9 @@ public class ModItems {
 
     public static final DeferredItem<Item> DARK_EMERALD = ITEMS.register("dark_emerald",
             () -> new Item(new Item.Properties()));
+
+    public static final DeferredItem<Item> ILLAGER_CAPTAIN_SPAWN_EGG = ITEMS.register("illager_captain_spawn_egg",
+            () -> new DeferredSpawnEggItem(ModEntities.ILLAGER_CAPTAIN, 0x1823360, 0x959B9B, new Item.Properties()));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

@@ -15,11 +15,14 @@ public class ModItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
+        basicItem(ModItems.DARK_EMERALD.get());
+
         handheldItem(ModItems.EMERALD_SWORD.get());
         handheldItem(ModItems.EMERALD_SHOVEL.get());
         handheldItem(ModItems.EMERALD_PICKAXE.get());
         handheldItem(ModItems.EMERALD_AXE.get());
         handheldItem(ModItems.EMERALD_HOE.get());
-        basicItem(ModItems.DARK_EMERALD.get());
+
+        withExistingParent(ModItems.ILLAGER_CAPTAIN_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
     }
 }
