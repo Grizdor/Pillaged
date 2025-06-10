@@ -19,10 +19,10 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
     protected void generate() {
         dropSelf(ModBlocks.PILLAGER_DEEPSLATE.get());
 
-        add(ModBlocks.DEEPSLATE_DARK_EMERALD_ORE.get(),
-                block -> createOreDrop(ModBlocks.DEEPSLATE_DARK_EMERALD_ORE.get(), ModItems.DARK_EMERALD.get()));
         add(ModBlocks.DARK_EMERALD_ORE.get(),
                 block -> createOreDrop(ModBlocks.DARK_EMERALD_ORE.get(), ModItems.DARK_EMERALD.get()));
+        add(ModBlocks.DEEPSLATE_DARK_EMERALD_ORE.get(),
+                block -> createOreDrop(ModBlocks.DEEPSLATE_DARK_EMERALD_ORE.get(), ModItems.DARK_EMERALD.get()));
     }
 
     @Override

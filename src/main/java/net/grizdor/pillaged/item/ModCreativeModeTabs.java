@@ -22,7 +22,11 @@ public class ModCreativeModeTabs {
                     .title(Component.translatable("itemGroup.pillaged"))
                     .withTabsBefore(CreativeModeTabs.COMBAT)
                     .displayItems((itemDisplayParameters, output) -> {
+                        // BLOCKS
                         output.accept(ModBlocks.PILLAGER_DEEPSLATE);
+                        output.accept(ModBlocks.DARK_EMERALD_ORE);
+                        output.accept(ModBlocks.DEEPSLATE_DARK_EMERALD_ORE);
+                        // ITEMS
                         output.accept(ModItems.EMERALD_SWORD);
                         output.accept(ModItems.EMERALD_SHOVEL);
                         output.accept(ModItems.EMERALD_PICKAXE);
