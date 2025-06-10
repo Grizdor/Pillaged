@@ -65,6 +65,46 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_emerald", has(Items.EMERALD))
                 .save(recipeOutput);
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.DARK_EMERALD_SWORD.get())
+                .pattern(" D ")
+                .pattern(" D ")
+                .pattern(" S ")
+                .define('D', ModItems.DARK_EMERALD).define('S', Items.STICK)
+                .unlockedBy("has_emerald", has(ModItems.DARK_EMERALD))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.DARK_EMERALD_SHOVEL.get())
+                .pattern(" E ")
+                .pattern(" S ")
+                .pattern(" S ")
+                .define('E', ModItems.DARK_EMERALD).define('S', Items.STICK)
+                .unlockedBy("has_emerald", has(ModItems.DARK_EMERALD))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.DARK_EMERALD_PICKAXE.get())
+                .pattern("EEE")
+                .pattern(" S ")
+                .pattern(" S ")
+                .define('E', ModItems.DARK_EMERALD).define('S', Items.STICK)
+                .unlockedBy("has_emerald", has(ModItems.DARK_EMERALD))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.DARK_EMERALD_AXE.get())
+                .pattern("EE ")
+                .pattern("ES ")
+                .pattern(" S ")
+                .define('E', ModItems.DARK_EMERALD).define('S', Items.STICK)
+                .unlockedBy("has_emerald", has(ModItems.DARK_EMERALD))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.DARK_EMERALD_HOE.get())
+                .pattern("EE ")
+                .pattern(" S ")
+                .pattern(" S ")
+                .define('E', ModItems.DARK_EMERALD).define('S', Items.STICK)
+                .unlockedBy("has_emerald", has(ModItems.DARK_EMERALD))
+                .save(recipeOutput);
+
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, Items.REINFORCED_DEEPSLATE)
                 .pattern("BDB")
                 .pattern("DBD")

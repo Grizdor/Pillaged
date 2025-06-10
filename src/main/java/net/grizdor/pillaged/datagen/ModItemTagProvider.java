@@ -22,18 +22,23 @@ public class ModItemTagProvider extends ItemTagsProvider {
     @Override
     protected void addTags(HolderLookup.Provider provider) {
         tag(ItemTags.SWORDS)
-                .add(ModItems.EMERALD_SWORD.get());
+                .add(ModItems.EMERALD_SWORD.get())
+                .add(ModItems.DARK_EMERALD_SWORD.get());
 
         tag(ItemTags.SHOVELS)
-                .add(ModItems.EMERALD_SHOVEL.get());
+                .add(ModItems.EMERALD_SHOVEL.get())
+                .add(ModItems.DARK_EMERALD_SHOVEL.get());
 
         tag(ItemTags.PICKAXES)
-                .add(ModItems.EMERALD_PICKAXE.get());
+                .add(ModItems.EMERALD_PICKAXE.get())
+                .add(ModItems.DARK_EMERALD_PICKAXE.get());
 
         tag(ItemTags.AXES)
-                .add(ModItems.EMERALD_AXE.get());
+                .add(ModItems.EMERALD_AXE.get())
+                .add(ModItems.DARK_EMERALD_AXE.get());
 
         tag(ItemTags.HOES)
-                .add(ModItems.EMERALD_HOE.get());
+                .add(ModItems.EMERALD_HOE.get())
+                .add(ModItems.DARK_EMERALD_HOE.get());
     }
 }
