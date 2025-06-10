@@ -22,11 +22,16 @@ public class ModBlockTagProvider extends BlockTagsProvider {
     protected void addTags(HolderLookup.Provider provider) {
         tag(BlockTags.MINEABLE_WITH_PICKAXE)
                 .add(ModBlocks.PILLAGER_DEEPSLATE.get())
+                .add(ModBlocks.DARK_EMERALD_ORE.get())
                 .add(ModBlocks.DEEPSLATE_DARK_EMERALD_ORE.get());
 
+        tag(BlockTags.NEEDS_IRON_TOOL)
+                .add(ModBlocks.DARK_EMERALD_ORE.get())
+                .add(ModBlocks.DEEPSLATE_DARK_EMERALD_ORE.get());
+
+        // EMERALD TOOL
         tag(ModTags.Blocks.NEEDS_EMERALD_TOOL)
                 .addTag(BlockTags.NEEDS_IRON_TOOL);
-
         tag(ModTags.Blocks.INCORRECT_FOR_EMERALD_TOOL)
                 .addTag(BlockTags.INCORRECT_FOR_IRON_TOOL)
                 .remove(ModTags.Blocks.NEEDS_EMERALD_TOOL);
