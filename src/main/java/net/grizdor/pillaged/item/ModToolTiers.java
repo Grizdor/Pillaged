@@ -9,7 +9,7 @@ import net.neoforged.neoforge.common.Tags;
 public class ModToolTiers {
     public static final Tier EMERALD = new SimpleTier(
             ModTags.Blocks.INCORRECT_FOR_EMERALD_TOOL,
-            800, 8.0F, 1.0F, 29,
+            800, 7.0F, 1.0F, 10,
             () -> Ingredient.of(Tags.Items.GEMS_EMERALD)
     );
 }
