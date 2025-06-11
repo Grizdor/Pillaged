@@ -3,7 +3,6 @@ package net.grizdor.pillaged.item;
 import net.grizdor.pillaged.ModTags;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.crafting.Ingredient;
-import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.common.SimpleTier;
 import net.neoforged.neoforge.common.Tags;
 

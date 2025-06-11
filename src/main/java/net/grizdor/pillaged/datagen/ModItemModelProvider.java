@@ -2,7 +2,6 @@ package net.grizdor.pillaged.datagen;
 
 import net.grizdor.pillaged.Pillaged;
 import net.grizdor.pillaged.item.ModItems;
-import net.grizdor.pillaged.potion.ModPotions;
 import net.minecraft.data.PackOutput;
 import net.neoforged.neoforge.client.model.generators.ItemModelProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;

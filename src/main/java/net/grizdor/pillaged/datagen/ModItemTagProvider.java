@@ -1,6 +1,5 @@
 package net.grizdor.pillaged.datagen;
 
-import net.grizdor.pillaged.ModTags;
 import net.grizdor.pillaged.Pillaged;
 import net.grizdor.pillaged.item.ModItems;
 import net.minecraft.core.HolderLookup;
