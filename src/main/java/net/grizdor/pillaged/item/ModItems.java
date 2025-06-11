@@ -37,17 +37,17 @@ public class ModItems {
             () -> new SwordItem(ModToolTiers.DARK_EMERALD, new Item.Properties()
                     .attributes(SwordItem.createAttributes(ModToolTiers.DARK_EMERALD, 6, -1.6F))));
     public static final DeferredItem<ShovelItem> DARK_EMERALD_SHOVEL = ITEMS.register("dark_emerald_shovel",
-            () -> new ShovelItem(ModToolTiers.EMERALD, new Item.Properties()
-                    .attributes(ShovelItem.createAttributes(ModToolTiers.EMERALD, 4.5F, -1.3F))));
+            () -> new ShovelItem(ModToolTiers.DARK_EMERALD, new Item.Properties()
+                    .attributes(ShovelItem.createAttributes(ModToolTiers.DARK_EMERALD, 4.5F, -1.3F))));
     public static final DeferredItem<PickaxeItem> DARK_EMERALD_PICKAXE = ITEMS.register("dark_emerald_pickaxe",
-            () -> new PickaxeItem(ModToolTiers.EMERALD, new Item.Properties()
-                    .attributes(PickaxeItem.createAttributes(ModToolTiers.EMERALD, 4.0F, -2.8F))));
+            () -> new PickaxeItem(ModToolTiers.DARK_EMERALD, new Item.Properties()
+                    .attributes(PickaxeItem.createAttributes(ModToolTiers.DARK_EMERALD, 4.0F, -2.8F))));
     public static final DeferredItem<AxeItem> DARK_EMERALD_AXE = ITEMS.register("dark_emerald_axe",
-            () -> new AxeItem(ModToolTiers.EMERALD, new Item.Properties()
-                    .attributes(AxeItem.createAttributes(ModToolTiers.EMERALD, 8.0F, -1.0F))));
+            () -> new AxeItem(ModToolTiers.DARK_EMERALD, new Item.Properties()
+                    .attributes(AxeItem.createAttributes(ModToolTiers.DARK_EMERALD, 8.0F, -1.0F))));
     public static final DeferredItem<HoeItem> DARK_EMERALD_HOE = ITEMS.register("dark_emerald_hoe",
-            () -> new HoeItem(ModToolTiers.EMERALD, new Item.Properties()
-                    .attributes(HoeItem.createAttributes(ModToolTiers.EMERALD, 0.0F, 0.0F))));
+            () -> new HoeItem(ModToolTiers.DARK_EMERALD, new Item.Properties()
+                    .attributes(HoeItem.createAttributes(ModToolTiers.DARK_EMERALD, 0.0F, 0.0F))));
 
     // SPAWN EGGS
     public static final DeferredItem<Item> ILLAGER_CAPTAIN_SPAWN_EGG = ITEMS.register("illager_captain_spawn_egg",

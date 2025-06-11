@@ -1,5 +1,6 @@
 package net.grizdor.pillaged.entity;
 
+import net.grizdor.pillaged.item.ModItems;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
@@ -102,7 +103,7 @@ public class IllagerCaptainEntity extends AbstractIllager {
 
     protected void populateDefaultEquipmentSlots(RandomSource random, DifficultyInstance difficulty) {
         if (this.getCurrentRaid() == null) {
-            this.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(Items.IRON_SWORD));
+            this.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(ModItems.EMERALD_SWORD.get()));
         }
     }
 }
