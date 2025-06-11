@@ -1,18 +1,28 @@
 {
   "itemGroup.pillaged": "Pillage'd",
 
+  "item.pillaged.dark_emerald": "Dark Emerald",
+
   "item.pillaged.emerald_sword": "Emerald Sword",
   "item.pillaged.emerald_shovel": "Emerald Shovel",
   "item.pillaged.emerald_pickaxe": "Emerald Pickaxe",
   "item.pillaged.emerald_axe": "Emerald Axe",
   "item.pillaged.emerald_hoe": "Emerald Hoe",
-  "item.pillaged.dark_emerald": "Dark Emerald",
+  "item.pillaged.dark_emerald_sword": "Dark Emerald Sword",
+  "item.pillaged.dark_emerald_shovel": "Dark Emerald Shovel",
+  "item.pillaged.dark_emerald_pickaxe": "Dark Emerald Pickaxe",
+  "item.pillaged.dark_emerald_axe": "Dark Emerald Axe",
+  "item.pillaged.dark_emerald_hoe": "Dark Emerald Hoe",
 
   "item.minecraft.potion.effect.resistance_potion": "Potion of Resistance",
   "item.minecraft.splash_potion.effect.resistance_potion": "Splash Potion of Resistance",
   "item.minecraft.lingering_potion.effect.resistance_potion": "Lingering Potion of Resistance",
 
+  "item.pillaged.illager_captain_spawn_egg": "Illager Captain Spawn Egg",
+
   "block.pillaged.pillager_deepslate": "Pillager Deepslate",
   "block.pillaged.dark_emerald_ore": "Dark Emerald Ore",
-  "block.pillaged.deepslate_dark_emerald_ore": "Deepslate Dark Emerald Ore"
+  "block.pillaged.deepslate_dark_emerald_ore": "Deepslate Dark Emerald Ore",
+
+  "entity.pillaged.illager_captain": "Illager Captain"
 }
