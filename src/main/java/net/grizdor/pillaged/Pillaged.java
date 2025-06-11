@@ -1,9 +1,12 @@
 package net.grizdor.pillaged;
 
 import net.grizdor.pillaged.block.ModBlocks;
+import net.grizdor.pillaged.entity.IllagerCaptainRenderer;
+import net.grizdor.pillaged.entity.ModEntities;
 import net.grizdor.pillaged.item.ModCreativeModeTabs;
 import net.grizdor.pillaged.item.ModItems;
 import net.grizdor.pillaged.potion.ModPotions;
+import net.minecraft.client.renderer.entity.EntityRenderers;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -43,6 +46,8 @@ public class Pillaged {
 
         ModPotions.register(modEventBus);
 
+        ModEntities.register(modEventBus);
+
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
 
@@ -70,7 +75,7 @@ public class Pillaged {
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
-
+            EntityRenderers.register(ModEntities.ILLAGER_CAPTAIN.get(), IllagerCaptainRenderer::new);
         }
     }
 }

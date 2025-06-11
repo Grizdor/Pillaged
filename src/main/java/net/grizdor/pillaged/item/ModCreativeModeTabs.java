@@ -38,6 +38,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.DARK_EMERALD_PICKAXE);
                         output.accept(ModItems.DARK_EMERALD_AXE);
                         output.accept(ModItems.DARK_EMERALD_HOE);
+                        output.accept(ModItems.ILLAGER_CAPTAIN_SPAWN_EGG);
                     }).build());
 
     public static void register(IEventBus eventBus) {
