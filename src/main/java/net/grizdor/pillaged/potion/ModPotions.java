@@ -13,8 +13,12 @@ public class ModPotions {
     public static final DeferredRegister<Potion> POTIONS =
             DeferredRegister.create(BuiltInRegistries.POTION, Pillaged.MOD_ID);
 
-    public static final Holder<Potion> RESISTANCE_POTION = POTIONS.register("resistance_potion",
+    public static final Holder<Potion> RESISTANCE = POTIONS.register("resistance",
             () -> new Potion(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 3600, 0)));
+    public static final Holder<Potion> LONG_RESISTANCE = POTIONS.register("long_resistance",
+            () -> new Potion(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 9600, 0)));
+    public static final Holder<Potion> STRONG_RESISTANCE = POTIONS.register("strong_resistance",
+            () -> new Potion(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 1800, 1)));
 
     public static void register(IEventBus eventBus){
         POTIONS.register(eventBus);
