@@ -9,6 +9,7 @@ import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.IllagerRenderer;
 import net.minecraft.client.renderer.entity.layers.ItemInHandLayer;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.CrossbowItem;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.api.distmarker.OnlyIn;
 
@@ -23,7 +24,7 @@ public class IllagerCaptainRenderer extends IllagerRenderer<IllagerCaptainEntity
                     float limbSwing, float limbSwingAmount,
                     float partialTicks, float ageInTicks,
                     float netHeadYaw, float headPitch) {
-                if (livingEntity.isAggressive()) {
+                if (livingEntity.isAggressive() || livingEntity.isChargingCrossbow() || livingEntity.isHolding((is) -> is.getItem() instanceof CrossbowItem)) {
                     super.render(poseStack, buffer, packedLight, livingEntity, limbSwing, limbSwingAmount, partialTicks, ageInTicks, netHeadYaw, headPitch);
                 }
 //                else {
