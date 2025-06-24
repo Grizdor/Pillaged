@@ -1,26 +1,19 @@
 package net.grizdor.pillaged.entity;
 
 import net.grizdor.pillaged.item.ModItems;
-import net.minecraft.core.Holder;
-import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.tags.DamageTypeTags;
-import net.minecraft.tags.FluidTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.DifficultyInstance;
+import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.*;
-import net.minecraft.world.entity.ai.attributes.AttributeInstance;
-import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
@@ -29,25 +22,29 @@ import net.minecraft.world.entity.ai.navigation.GroundPathNavigation;
 import net.minecraft.world.entity.animal.IronGolem;
 import net.minecraft.world.entity.monster.*;
 import net.minecraft.world.entity.npc.AbstractVillager;
+import net.minecraft.world.entity.npc.InventoryCarrier;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.raid.Raid;
 import net.minecraft.world.item.CrossbowItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.ProjectileWeaponItem;
-import net.minecraft.world.item.alchemy.Potion;
-import net.minecraft.world.item.alchemy.PotionContents;
-import net.minecraft.world.item.alchemy.Potions;
+import net.minecraft.world.item.enchantment.EnchantmentHelper;
+import net.minecraft.world.item.enchantment.providers.VanillaEnchantmentProviders;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
-import net.minecraft.world.level.gameevent.GameEvent;
 
 import javax.annotation.Nullable;
 
-public class IllagerCaptainEntity extends AbstractIllager implements CrossbowAttackMob {
+public class IllagerCaptainEntity extends AbstractIllager implements CrossbowAttackMob, InventoryCarrier {
     private static final EntityDataAccessor<Boolean> IS_CHARGING_CROSSBOW;
     private static final EntityDataAccessor<Boolean> IS_ARMED_WITH_CROSSBOW;
     private int usingTime;
+
+    private static final int SWORD_SLOT = 0;
+    private static final int SHIELD_SLOT = 1;
+    private static final int CROSSBOW_SLOT = 2;
+    private final SimpleContainer inventory = new SimpleContainer(3);
 
     public IllagerCaptainEntity(EntityType<? extends AbstractIllager> entityType, Level level) {
         super(entityType, level);
@@ -98,13 +95,18 @@ public class IllagerCaptainEntity extends AbstractIllager implements CrossbowAtt
             // Swap Weapons
             if (this.isArmedWithCrossbow()) {
                 if (this.usingTime-- <= 0 && !this.isChargingCrossbow()) {
+                    // Crossbow to Sword
                     this.setArmedWithCrossbow(false);
-                    this.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(ModItems.EMERALD_SWORD.get()));
-                    this.setItemSlot(EquipmentSlot.OFFHAND, new ItemStack(Items.SHIELD));
+                    this.inventory.setItem(CROSSBOW_SLOT, this.getItemBySlot(EquipmentSlot.MAINHAND));
+                    this.setItemSlot(EquipmentSlot.MAINHAND, this.inventory.getItem(SWORD_SLOT));
+                    this.setItemSlot(EquipmentSlot.OFFHAND, this.inventory.getItem(SHIELD_SLOT));
                 }
             } else {
                 if (this.random.nextFloat() < 0.5F && this.getTarget() != null && this.getTarget().distanceToSqr(this) > (double)121.0F) {
-                    this.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(Items.CROSSBOW));
+                    // Sword&Shield to Crossbow
+                    this.inventory.setItem(SWORD_SLOT, this.getItemBySlot(EquipmentSlot.MAINHAND));
+                    this.inventory.setItem(SHIELD_SLOT, this.getItemBySlot(EquipmentSlot.OFFHAND));
+                    this.setItemSlot(EquipmentSlot.MAINHAND, this.inventory.getItem(CROSSBOW_SLOT));
                     this.setItemSlot(EquipmentSlot.OFFHAND, ItemStack.EMPTY);
                     this.usingTime = this.random.nextIntBetweenInclusive(10*20,30*20);
                     this.setArmedWithCrossbow(true);
@@ -119,13 +121,29 @@ public class IllagerCaptainEntity extends AbstractIllager implements CrossbowAtt
 
     }
 
+    @Override
+    public SimpleContainer getInventory() {
+        return this.inventory;
+    }
+
+    // Data
     protected void defineSynchedData(SynchedEntityData.Builder builder) {
         super.defineSynchedData(builder);
         builder.define(IS_CHARGING_CROSSBOW, false);
         builder.define(IS_ARMED_WITH_CROSSBOW, false);
     }
 
-    // finalizeSpawn & populateDefaultEquipmentSlots
+    public void addAdditionalSaveData(CompoundTag compound) {
+        super.addAdditionalSaveData(compound);
+        this.writeInventoryToTag(compound, this.registryAccess());
+    }
+
+    public void readAdditionalSaveData(CompoundTag compound) {
+        super.readAdditionalSaveData(compound);
+        this.readInventoryFromTag(compound, this.registryAccess());
+    }
+
+    // Spawn & Default Equipment
     @Nullable
     public SpawnGroupData finalizeSpawn(ServerLevelAccessor level, DifficultyInstance difficulty, MobSpawnType spawnType, @Nullable SpawnGroupData spawnGroupData) {
         SpawnGroupData spawngroupdata = super.finalizeSpawn(level, difficulty, spawnType, spawnGroupData);
@@ -141,6 +159,16 @@ public class IllagerCaptainEntity extends AbstractIllager implements CrossbowAtt
             this.setItemSlot(EquipmentSlot.HEAD, Raid.getLeaderBannerInstance(this.registryAccess().lookupOrThrow(Registries.BANNER_PATTERN)));
             this.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(ModItems.EMERALD_SWORD.get()));
             this.setItemSlot(EquipmentSlot.OFFHAND, new ItemStack(Items.SHIELD));
+            this.inventory.setItem(CROSSBOW_SLOT, new ItemStack(Items.CROSSBOW));
+        }
+    }
+
+    protected void enchantSpawnedWeapon(ServerLevelAccessor level, RandomSource random, DifficultyInstance difficulty) {
+        super.enchantSpawnedWeapon(level, random, difficulty);
+        ItemStack crossbowSlotItemstack = inventory.getItem(CROSSBOW_SLOT);
+        EnchantmentHelper.enchantItemFromProvider(this.getMainHandItem(), level.registryAccess(), VanillaEnchantmentProviders.RAID_VINDICATOR, difficulty, random);
+        if (crossbowSlotItemstack.is(Items.CROSSBOW)) {
+            EnchantmentHelper.enchantItemFromProvider(crossbowSlotItemstack, level.registryAccess(), VanillaEnchantmentProviders.PILLAGER_SPAWN_CROSSBOW, difficulty, random);
         }
     }
 
