@@ -1,8 +1,11 @@
 package net.grizdor.pillaged.item;
 
 import net.grizdor.pillaged.Pillaged;
+import net.grizdor.pillaged.block.ModBlocks;
 import net.grizdor.pillaged.entity.ModEntities;
+import net.minecraft.core.Direction;
 import net.minecraft.world.item.*;
+import net.minecraft.world.level.block.Blocks;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.common.DeferredSpawnEggItem;
 import net.neoforged.neoforge.registries.DeferredItem;
@@ -48,6 +51,11 @@ public class ModItems {
     public static final DeferredItem<HoeItem> DARK_EMERALD_HOE = ITEMS.register("dark_emerald_hoe",
             () -> new HoeItem(ModToolTiers.DARK_EMERALD, new Item.Properties()
                     .attributes(HoeItem.createAttributes(ModToolTiers.DARK_EMERALD, 0.0F, -3.0F))));
+
+    // TORCHS
+    public static final DeferredItem<StandingAndWallBlockItem> SCONCED_TORCH = ITEMS.register("sconced_torch",
+            () -> new StandingAndWallBlockItem(ModBlocks.SCONCED_TORCH.get(), ModBlocks.SCONCED_WALL_TORCH.get(),
+                    new Item.Properties(), Direction.DOWN));
 
     // SPAWN EGGS
     public static final DeferredItem<Item> ILLAGER_CAPTAIN_SPAWN_EGG = ITEMS.register("illager_captain_spawn_egg",

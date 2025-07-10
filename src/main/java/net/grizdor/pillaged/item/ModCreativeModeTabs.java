@@ -27,6 +27,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.DARK_EMERALD_ORE);
                         output.accept(ModBlocks.DEEPSLATE_DARK_EMERALD_ORE);
                         // ITEMS
+                        output.accept(ModItems.SCONCED_TORCH);
                         output.accept(ModItems.EMERALD_SWORD);
                         output.accept(ModItems.EMERALD_SHOVEL);
                         output.accept(ModItems.EMERALD_PICKAXE);

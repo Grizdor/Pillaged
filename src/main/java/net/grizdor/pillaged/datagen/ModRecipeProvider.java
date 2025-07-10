@@ -24,6 +24,14 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     protected void buildRecipes(RecipeOutput recipeOutput) {
         List<ItemLike> DARK_EMERALD_SMELTABLES = List.of(ModBlocks.DARK_EMERALD_ORE, ModBlocks.DEEPSLATE_DARK_EMERALD_ORE);
 
+        // SHAPELESS RECIPES
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.SCONCED_TORCH.get())
+                .requires(Items.TORCH)
+                .requires(Items.IRON_NUGGET)
+                .unlockedBy("has_torch", has(Items.TORCH))
+                .unlockedBy("has_iron_nugget", has(Items.IRON_NUGGET))
+                .save(recipeOutput);
+
         // SHAPED RECIPES
         ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.EMERALD_SWORD.get())
                 .pattern(" E ")

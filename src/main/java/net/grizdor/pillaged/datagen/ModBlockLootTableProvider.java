@@ -18,6 +18,10 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
     @Override
     protected void generate() {
         dropSelf(ModBlocks.PILLAGER_DEEPSLATE.get());
+        dropSelf(ModBlocks.SCONCED_TORCH.get());
+
+        dropOther(ModBlocks.SCONCED_TORCH.get(), ModItems.SCONCED_TORCH.get());
+        dropOther(ModBlocks.SCONCED_WALL_TORCH.get(), ModItems.SCONCED_TORCH.get());
 
         add(ModBlocks.DARK_EMERALD_ORE.get(),
                 block -> createOreDrop(ModBlocks.DARK_EMERALD_ORE.get(), ModItems.DARK_EMERALD.get()));

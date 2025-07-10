@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "pillaged:block/sconced_wall_torch"
+    },
+    "facing=north": {
+      "model": "pillaged:block/sconced_wall_torch",
+      "y": 270
+    },
+    "facing=south": {
+      "model": "pillaged:block/sconced_wall_torch",
+      "y": 90
+    },
+    "facing=west": {
+      "model": "pillaged:block/sconced_wall_torch",
+      "y": 180
+    }
+  }
+}

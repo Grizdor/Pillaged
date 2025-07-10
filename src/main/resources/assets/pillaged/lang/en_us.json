@@ -26,6 +26,10 @@
 
   "item.pillaged.illager_captain_spawn_egg": "Illager Captain Spawn Egg",
 
+  "item.pillaged.sconced_torch": "Sconced Torch",
+  "block.pillaged.sconced_torch": "Sconced Torch",
+  "block.pillaged.sconced_wall_torch": "Sconced Torch",
+
   "block.pillaged.pillager_deepslate": "Pillager Deepslate",
   "block.pillaged.dark_emerald_ore": "Dark Emerald Ore",
   "block.pillaged.deepslate_dark_emerald_ore": "Deepslate Dark Emerald Ore",
