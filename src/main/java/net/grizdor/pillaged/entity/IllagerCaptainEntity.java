@@ -55,7 +55,7 @@ public class IllagerCaptainEntity extends AbstractIllager implements CrossbowAtt
         super.registerGoals();
 
         this.goalSelector.addGoal(0, new FloatGoal(this));
-        this.goalSelector.addGoal(1, new RangedCrossbowAttackGoal(this, (double)1.0F, 8.0F));
+        this.goalSelector.addGoal(1, new RangedCrossbowAttackGoal<>(this, (double)1.0F, 8.0F));
         this.goalSelector.addGoal(4, new MeleeAttackGoal(this, (double)1.0F, false));
         this.goalSelector.addGoal(8, new RandomStrollGoal(this, 0.6));
         this.goalSelector.addGoal(9, new LookAtPlayerGoal(this, Player.class, 15.0F, 1.0F));

@@ -1,0 +1,9 @@
+{
+  "package": "net.grizdor.pillaged.mixin",
+  "mixins": [
+    "PillagerMixin"
+  ],
+  "client": [],
+  "server": [],
+  "required": true
+}
