@@ -1,6 +1,7 @@
 package net.grizdor.pillaged.entity;
 
 import net.grizdor.pillaged.item.ModItems;
+import net.minecraft.core.HolderSet;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
@@ -9,6 +10,7 @@ import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.tags.EnchantmentTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.SimpleContainer;
@@ -29,12 +31,14 @@ import net.minecraft.world.item.CrossbowItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.ProjectileWeaponItem;
+import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.item.enchantment.providers.VanillaEnchantmentProviders;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
 
 import javax.annotation.Nullable;
+import java.util.Optional;
 
 public class IllagerCaptainEntity extends AbstractIllager implements CrossbowAttackMob, InventoryCarrier {
     private static final EntityDataAccessor<Boolean> IS_CHARGING_CROSSBOW;
@@ -164,12 +168,15 @@ public class IllagerCaptainEntity extends AbstractIllager implements CrossbowAtt
     }
 
     protected void enchantSpawnedWeapon(ServerLevelAccessor level, RandomSource random, DifficultyInstance difficulty) {
-        super.enchantSpawnedWeapon(level, random, difficulty);
-        ItemStack crossbowSlotItemstack = inventory.getItem(CROSSBOW_SLOT);
-        EnchantmentHelper.enchantItemFromProvider(this.getMainHandItem(), level.registryAccess(), VanillaEnchantmentProviders.RAID_VINDICATOR, difficulty, random);
-        if (crossbowSlotItemstack.is(Items.CROSSBOW)) {
-            EnchantmentHelper.enchantItemFromProvider(crossbowSlotItemstack, level.registryAccess(), VanillaEnchantmentProviders.PILLAGER_SPAWN_CROSSBOW, difficulty, random);
-        }
+        int enchantLevel = 5 + random.nextInt(15);
+        Optional<HolderSet.Named<Enchantment>> possibleEnchantments = level.registryAccess().registryOrThrow(Registries.ENCHANTMENT)
+                .getTag(EnchantmentTags.ON_MOB_SPAWN_EQUIPMENT);
+        // Enchant Sword
+        this.setItemSlot(EquipmentSlot.MAINHAND,
+                EnchantmentHelper.enchantItem(random, this.getMainHandItem(), enchantLevel, level.registryAccess(), possibleEnchantments));
+        // Enchant Crossbow
+        this.inventory.setItem(CROSSBOW_SLOT,
+                EnchantmentHelper.enchantItem(random, inventory.getItem(CROSSBOW_SLOT), enchantLevel, level.registryAccess(), possibleEnchantments));
     }
 
     // Crossbow & Ranged Attack
